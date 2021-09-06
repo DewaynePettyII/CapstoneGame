@@ -21,7 +21,7 @@ loadSprite('pipe-bottom-left', 'c1cYSbt.png')
 loadSprite('pipe-bottom-right', 'nqQ79eI.png')
 
 scene("game", () => {
-    layvers(['bg', 'obj', 'ui'],'obj')
+    layers(['bg', 'obj', 'ui'],'obj')
 
     const map = [
         '                                                    ',
