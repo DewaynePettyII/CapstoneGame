@@ -32,17 +32,38 @@ scene("game", () => {
         '                                                    ',
         '                                                    ',
         '                                                    ',
+        '                   +                                 ',
         '                                                    ',
+        '                                                    ',
+        '                  ===                               ',
+        '                                                    ',
+        '             ^^^       ^^^                          ',
         '=======================================   ==========',
     ]
 
     const levelCfg = {
         width: 20,
         height: 20,
-        '=': [sprite('block', solid())]
+        '=': [sprite('brick', area())],
+        '+': [sprite('block', solid())],
+        '1': [sprite('pipe-top-left')],
+        '2': [sprite('pipe-top-right')],
+        '3': [sprite('pipe-bottom-left')],
+        '4': [sprite('pipe-bottom-right')],
+        '-': [sprite('unboxed', solid())],
+        '*': [sprite('goomba', solid())],
+        '^': [sprite('coin')],
+
     }
 
     const gamelevel = addLevel(map, levelCfg)
+
+    const Player = add([
+        sprite('mario'), area(),
+        pos(30, 0),
+        body(),
+        origin('bot')
+    ])
 
 })
 
