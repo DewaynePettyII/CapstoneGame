@@ -6,6 +6,9 @@ kaboom({
     clearColor: [0, 0, 0, 1],  
 })
 
+const MOVE_SPEED = 120
+const JUMP_FORCE = 360
+
 loadRoot('https://i.imgur.com/')
 loadSprite('coin', 'wbKxhcd.png')
 loadSprite('goomba', 'KP03fR9.png')
@@ -44,8 +47,8 @@ scene("game", () => {
     const levelCfg = {
         width: 20,
         height: 20,
-        '=': [sprite('brick', area())],
-        '+': [sprite('block', solid())],
+        '=': [sprite('brick'), solid()],
+        '+': [sprite('block'), solid()],
         '1': [sprite('pipe-top-left')],
         '2': [sprite('pipe-top-right')],
         '3': [sprite('pipe-bottom-left')],
@@ -58,12 +61,37 @@ scene("game", () => {
 
     const gamelevel = addLevel(map, levelCfg)
 
-    const Player = add([
-        sprite('mario'), area(),
+    const scroreLabel = add([
+        text('test'),
+        pos(30, 6),
+        layer('ui'),
+        {
+            value: 'test',
+        }
+    ])
+
+    add([text('level' + 'test', pos (4,6))])
+
+    const player = add([
+        sprite('mario'), solid(),
         pos(30, 0),
         body(),
         origin('bot')
     ])
+
+    keyDown('left', () => {
+        player.move(-MOVE_SPEED, 0)
+    })
+
+    keyDown('right', () => {
+        player.move(MOVE_SPEED, 0)
+    })
+
+    keyPress('space', () => {
+        if (player.grounded()){
+            player.jump(JUMP_FORCE)
+        }
+    })
 
 })
 
