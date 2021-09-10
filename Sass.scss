@@ -1,0 +1,40 @@
+$color1: #d4d428;
+$color2: lightyellow;
+$body: red;
+$fontCLR: black;
+
+@mixin content {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@mixin font {
+    font-size: large;
+    font-weight: bolder;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#bdy {
+    background-color: $body;
+}
+#btn {
+    color: $fontCLR;
+    font-weight: bold;
+    background-color: $color1;
+    &:hover{
+        background-color: $color2;
+    }
+}
+.center {
+    @include content;
+    width: 20%;
+}
+.cntr {
+    @include content;
+}
+.font {
+    @include font;
+}
