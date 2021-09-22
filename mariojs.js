@@ -6,6 +6,7 @@ kaboom({
     clearColor: [0, 0, 0, 1],  
 })
 
+
 const MOVE_SPEED = 120
 const JUMP_FORCE = 360
 const BIG_JUMP_FORCE =550
@@ -26,48 +27,102 @@ loadSprite('pipe-top-left', 'ReTPiWY.png')
 loadSprite('pipe-top-right', 'hj2GK4n.png')
 loadSprite('pipe-bottom-left', 'c1cYSbt.png')
 loadSprite('pipe-bottom-right', 'nqQ79eI.png')
+loadSprite('boss-goomba', 'SvV4ueD.png')
+loadSprite('blue-brick', '3e5YRQd.png')
 
-scene("game", ({ score }) => {
+scene("game", ({ level, score }) => {
     layers(['bg', 'obj', 'ui'],'obj')
 
-    const map = [
-        '                                                    ',
-        '                                                    ',
-        '                                                    ',
-        '                                                    ',
-        '                                                    ',
-        '                                                    ',
-        '                                                    ',
-        '                                                   =',
-        '                   &                               =',
-        '                                                   =',
-        '                                                   =',
-        '                  ===                           &&%=',
-        '                                                   =',
-        '             ^^^   *   ^^^                         =',
-        '=======================================   ==========',
-        '                                          =         ',
-        '                                          =         ',
-        '                                          =         ',
-        '                                          =         ',
-        '              ===========     =============         ',
-        '                              =                     ',
-        '       =====               ====                     ',
-        '^^^    =                 ====                       ',   
-        '===    =               ===                          ',
-        '       =             ===                            ',
-        '     ^^=&&&        ===                              ',
-        '    ====                                            ',
-        '       =                                            ',
-        '^^     ===================================          ',
-        '===                                                 ',
-        '                                                    ',
-        '    ^^^^^^^^^                                       ',
-        '   ============                                     ',
-        '                                                    ',
-        '                                                    ',
-        '                                                    ',
-       
+    const maps = [
+       [                                                    
+        '       =================================================================================   ',
+        '                                                     ====              ===             =  ',
+        '                                                     ====              === ^^^^^^^^^^^ =  ',
+        '                                                       ====           ==== ^^^^^^^^^^% =  ',
+        '                                                          ================ ^^^^^^^^^^^ =  ',
+        '                                                                           ^^^^^^^^^^^ =  ',
+        '                                                                           ^^^^^^^^^^^ =  ',
+        '                                                                           ^^^^^^^^^^^ =  ',
+        '                   &                               =====================================  ',
+        '                                                   ===  ',
+        '                                                   ===  ',
+        '                                                   ===  ',
+        '                  ===                           &&%===  ',
+        '                                                   ===  ',
+        '             ^^^   *   ^^^       *                 ===   ',
+        '=======================================   ============   ',
+        '                                          ==  ',
+        '                                          == ',
+        '                                          ==  ',
+        '                                          ==  ',
+        '              ===========     ============== ',
+        '                              =            =  ',
+        '       =====               ====            =  ',
+        '^^^    =                 ====              = ',   
+        '===    =               ===                 =  ',
+        '       =             ===                   =  ',
+        '     ^^=&&&        ===                 12 ==',
+        '    ====                                  ==',
+        '       =                               34 ==',
+        '^^     =====================================',
+        '===                                                                                        ',
+        '  =                                                                                         ',
+        '  =  ^8^^^^^^^8                                                                           ',
+        '  ==========================================                                               ',
+        '                                                                                    ',
+        '                                                                                    ',
+        '                                                                                    ',
+       ],
+      [
+      '                               &&&                   ',
+      '                                                     ',
+      '                                                     ',
+      '                              =========               ',
+      '                             ====                     ',
+      '                            =====                   =',
+      '                           ======                   =',
+      '                          =======                   =',
+      '                         ========  ^^^^^^^          =',
+      '                        ===================         =',
+      '                       =                           %=',
+      '                 =======                            =',
+      '                 =                             &&&  =',
+      '                 =                                  =',
+      '                 =                       * ^^^^^^^^ =',
+      '                 =          ^^^^  ===================',
+      '                 =        ======                    = ',
+      '          %      =                                  = ',
+      '                 =                                  = ',
+      '       ===========                                  =                       ==============             ',
+      '                                                    =                       =            =  ',
+      '                                                    =                       =            =      ',
+      '                      ============                  =                       =        12  =      ',
+      '           %          =                             =========================            =                          ',
+      '                      =                                                            ==34  =     ',
+      '         *     *      = ^^^^^^^                                                  ====    =     ',
+      '==========================================================================================       ',
+      '                                                     ',
+      '                                                     ',
+      '                                                     ',
+      '                                                     ',
+      ],
+      [
+        
+        '                                                    x',  
+        '                                                    x',
+        '                                                    x',
+        'x                                                   x',
+        'x                                                   x',
+        'x                                                   x',  
+        'x                                                   x',
+        'x                                                   x',
+        'x                          <                        x',
+        'x                                                   x',
+        'x                                                   x',
+        'x                                                   x',
+        'x                                                   x',
+        'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
+      ]  
     ]
 
     const levelCfg = {
@@ -75,20 +130,23 @@ scene("game", ({ score }) => {
         height: 20,
         '=': [sprite('brick'), solid()],
         '+': [sprite('block'), solid()],
-        '1': [sprite('pipe-top-left'), solid()],
-        '2': [sprite('pipe-top-right'), solid()],
+        '1': [sprite('pipe-top-left'), solid(), 'pipe'],
+        '2': [sprite('pipe-top-right'), solid(), 'pipe'],
         '3': [sprite('pipe-bottom-left'), solid()],
         '4': [sprite('pipe-bottom-right'), solid()],
         '-': [sprite('unboxed'), solid()],
-        '*': [sprite('goomba'), solid(), 'dangerous'],
+        '*': [sprite('goomba'), solid(), 'dangerous', body()],
+        '8': [sprite('goomba'), solid(), 'enemy', body()],
+        "<": [sprite('boss-goomba'), solid(), 'dangerous', body(), scale(2.5)],
         '^': [sprite('coin'), 'coin'],
         '@': [sprite('mushroom'), solid(), 'mushroom', body()],
         '&': [sprite('surprise'), solid(), 'coin-surpise'],
         '%': [sprite('surprise'), solid(), 'mushroom-surpise'],
+        'x': [sprite('blue-brick'), solid()],
 
     }
 
-    const gamelevel = addLevel(map, levelCfg)
+    const gamelevel = addLevel(maps[level], levelCfg)
 
     const scoreLabel = add([
         text(score),
@@ -99,7 +157,7 @@ scene("game", ({ score }) => {
         }
     ])
 
-    add([text('level' + 'test', pos (4,6))])
+    add([text('level' + parseInt(level + 1)), pos(40, 6)])
 
     function big() {
         let timer = 0
@@ -162,6 +220,14 @@ scene("game", ({ score }) => {
         d.move(-ENEMY_SPEED, 0)
     })
 
+    action('enemy', (e) => {
+        e.move(ENEMY_SPEED, 0)
+    })
+
+    action('boss', (b) => {
+        b.move(ENEMY_SPEED, 0(7), -ENEMY_SPEED, 0(7))
+    })
+
     player.collides('mushroom', (m) => {
         destroy(m)
         player.biggify(6)
@@ -173,9 +239,17 @@ scene("game", ({ score }) => {
         scoreLabel.text = scoreLabel.value
     })
 
-    player.collides('dangerous', (d) => {
+    player.collides('dangerous',  (d) => {
         if (isJumping) {
             destroy(d)
+        } else {
+            go('lose', { score: scoreLabel.value})
+        }  
+    })
+
+    player.collides('enemy',  (e) => {
+        if (isJumping) {
+            destroy(e)
         } else {
             go('lose', { score: scoreLabel.value})
         }  
@@ -186,6 +260,15 @@ scene("game", ({ score }) => {
         if (player.pos.y >= FALL_DEATH) {
         go('lose', {score: scoreLabel.value})
         }
+    })
+
+    player.collides('pipe', ()=> {
+        keyPress('down', () => {
+            go('game', {
+                level: (level + 1),
+                score: scoreLabel.value
+            })
+        })
     })
 
     keyDown('left', () => {
@@ -215,4 +298,4 @@ scene('lose', ({ score }) => {
     add([text(score, 32), origin ('center'), pos(width()/2, height()/ 2)])
 })
 
-start("game", { score: 0 })
+start("game", { level: 0, score: 0 })
