@@ -1,5 +1,5 @@
 #bdy {
-  background-color: red;
+  background-color: #540505;
 }
 
 #btn {
@@ -31,4 +31,13 @@
   font-family: Arial, Helvetica, sans-serif;
   padding-left: 10px;
   padding-right: 10px;
+  color: white;
+}
+
+.title {
+  font-size: 250%;
+  font-weight: bold;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  text-shadow: black;
+  color: white;
 }
