@@ -29,14 +29,18 @@ $fontCLR: rgb(0, 0, 0);
 #bdy {
     background-color: $body;
 }
+
+#orange{}
+
 #btn {
     color: $fontCLR;
     font-weight: bold;
     background-color: $color1;
     &:hover{
-        background-color: $color2;
+        background-color: $color2;    
     }
 }
+    
 .center {
     @include content;
     width: 20%;
@@ -47,6 +51,6 @@ $fontCLR: rgb(0, 0, 0);
 .font {
     @include font;
 }
-.title{
+.title {
     @include title;
 }
