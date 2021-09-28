@@ -1,7 +1,7 @@
 $color1: #d4d428;
 $color2: lightyellow;
-$body: red;
-$fontCLR: black;
+$body: rgb(84, 5, 5);
+$fontCLR: rgb(0, 0, 0);
 
 @mixin content {
     display: block;
@@ -15,19 +15,32 @@ $fontCLR: black;
     font-family: Arial, Helvetica, sans-serif;
     padding-left: 10px;
     padding-right: 10px;
+    color: white;
+}
+
+@mixin title {
+    font-size: 250%;
+    font-weight: bold;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-shadow: black;
+    color: white;
 }
 
 #bdy {
     background-color: $body;
 }
+
+#orange{}
+
 #btn {
     color: $fontCLR;
     font-weight: bold;
     background-color: $color1;
     &:hover{
-        background-color: $color2;
+        background-color: $color2;    
     }
 }
+    
 .center {
     @include content;
     width: 20%;
@@ -37,4 +50,7 @@ $fontCLR: black;
 }
 .font {
     @include font;
+}
+.title {
+    @include title;
 }
