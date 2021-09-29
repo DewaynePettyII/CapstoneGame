@@ -3,6 +3,10 @@ $color2: #a6daee;
 $body: #E52521;
 $fontCLR: rgb(0, 0, 0);
 
+@mixin page {
+    position: absolute;
+}
+
 @mixin content {
     display: block;
     margin-left: auto;
@@ -25,6 +29,7 @@ $fontCLR: rgb(0, 0, 0);
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     text-shadow: black;
     color: white;
+    padding-left: 500px;
 }
 @mixin btn($type: "default") {
     @if $type == 'round' {
@@ -34,7 +39,7 @@ $fontCLR: rgb(0, 0, 0);
 }
 
 #orange {
-    position: relative;
+    position: absolute;
     z-index: -1;
 }
 
@@ -69,7 +74,9 @@ $fontCLR: rgb(0, 0, 0);
 }
 .font {
     @include font;
+    @include page;
 }
 .title {
     @include title;
 }
+

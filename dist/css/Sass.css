@@ -1,6 +1,7 @@
 #orange {
-  position: relative;
+  position: absolute;
   z-index: -1;
+  padding-right: 50px;
 }
 
 #bdy {
@@ -47,6 +48,7 @@
   padding-left: 10px;
   padding-right: 10px;
   color: white;
+  position: absolute;
 }
 
 .title {
@@ -55,4 +57,5 @@
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   text-shadow: black;
   color: white;
+  padding-left: 500px;
 }
