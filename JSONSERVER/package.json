@@ -1,0 +1,22 @@
+{
+  "name": "capstonegame",
+  "version": "1.0.0",
+  "description": "Mock-Up REST API for Mario: Mini Rush",
+  "main": "mariojs.js",
+  "scripts": {
+    "mmr_server": "mario_mini_rush --watch mmr.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DewaynePettyII/CapstoneGame.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DewaynePettyII/CapstoneGame/issues"
+  },
+  "homepage": "https://github.com/DewaynePettyII/CapstoneGame#readme",
+  "dependencies": {
+    "json-server": "^0.16.3"
+  }
+}
