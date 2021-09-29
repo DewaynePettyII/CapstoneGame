@@ -1,12 +1,13 @@
-$color1: #d4d428;
-$color2: lightyellow;
-$body: rgb(84, 5, 5);
+$color1: #049CD8;
+$color2: #a6daee;
+$body: #E52521;
 $fontCLR: rgb(0, 0, 0);
 
 @mixin content {
     display: block;
     margin-left: auto;
     margin-right: auto;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 @mixin font {
@@ -25,20 +26,38 @@ $fontCLR: rgb(0, 0, 0);
     text-shadow: black;
     color: white;
 }
+@mixin btn($type: "default") {
+    @if $type == 'round' {
+        border-radius: 50px;
+        padding: 1rem;
+    }
+}
+
+#orange {
+    position: relative;
+    z-index: -1;
+}
 
 #bdy {
     background-color: $body;
 }
 
-#orange{}
-
 #btn {
     color: $fontCLR;
     font-weight: bold;
-    background-color: $color1;
-    &:hover{
-        background-color: $color2;    
+    background-color: $color1; 
+    width: 200px;
+    height: 50px;
+    border-radius: 4px;
+    box-shadow: inset 0 0 0 0;
+    transition: ease-out 0.3s;
+    outline: none;
+    &:hover{ 
+        box-shadow: inset 200px 0 0 0 #a6daee ;
+        cursor: pointer;
+        color: #E52521    
     }
+    @include btn;
 }
     
 .center {
