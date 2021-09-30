@@ -1,5 +1,5 @@
-$color1: #049CD8;
-$color2: #a6daee;
+$color1: #FBD000;
+$color2: #f7edb9;
 $body: #E52521;
 $fontCLR: rgb(0, 0, 0);
 
@@ -58,7 +58,7 @@ $fontCLR: rgb(0, 0, 0);
     transition: ease-out 0.3s;
     outline: none;
     &:hover{ 
-        box-shadow: inset 200px 0 0 0 #a6daee ;
+        box-shadow: inset 200px 0 0 0 #f7edb9;
         cursor: pointer;
         color: #E52521    
     }

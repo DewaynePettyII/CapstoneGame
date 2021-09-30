@@ -1,7 +1,6 @@
 #orange {
   position: absolute;
   z-index: -1;
-  padding-right: 50px;
 }
 
 #bdy {
@@ -11,7 +10,7 @@
 #btn {
   color: black;
   font-weight: bold;
-  background-color: #049CD8;
+  background-color: #FBD000;
   width: 200px;
   height: 50px;
   border-radius: 4px;
@@ -21,7 +20,7 @@
 }
 
 #btn:hover {
-  box-shadow: inset 200px 0 0 0 #a6daee;
+  box-shadow: inset 200px 0 0 0 #f7edb9;
   cursor: pointer;
   color: #E52521;
 }
