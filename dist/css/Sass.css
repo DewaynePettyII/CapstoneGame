@@ -1,5 +1,5 @@
 #orange {
-  position: relative;
+  position: absolute;
   z-index: -1;
 }
 
@@ -10,7 +10,7 @@
 #btn {
   color: black;
   font-weight: bold;
-  background-color: #049CD8;
+  background-color: #FBD000;
   width: 200px;
   height: 50px;
   border-radius: 4px;
@@ -20,7 +20,7 @@
 }
 
 #btn:hover {
-  box-shadow: inset 200px 0 0 0 #a6daee;
+  box-shadow: inset 200px 0 0 0 #f7edb9;
   cursor: pointer;
   color: #E52521;
 }
@@ -47,6 +47,7 @@
   padding-left: 10px;
   padding-right: 10px;
   color: white;
+  position: absolute;
 }
 
 .title {
@@ -55,4 +56,5 @@
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   text-shadow: black;
   color: white;
+  padding-left: 500px;
 }
