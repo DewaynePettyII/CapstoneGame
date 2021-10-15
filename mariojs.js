@@ -30,7 +30,7 @@ loadSprite('pipe-bottom-right', 'nqQ79eI.png')
 loadSprite('boss-goomba', 'SvV4ueD.png')
 loadSprite('blue-brick', '3e5YRQd.png')
 
-scene("game", ({ level, score }) => {
+scene("game", ({ level , score }) => {
     layers(['bg', 'obj', 'ui'],'obj')
 
     const maps = [
@@ -74,7 +74,10 @@ scene("game", ({ level, score }) => {
         '                                                                                    ',
        ],
       [
-      '                               &&&                   ',
+      '                                                     ',
+      '                                                     ',
+      '                               &&&                   ', 
+      '                                                     ',
       '                                                     ',
       '                                                     ',
       '                              =========               ',
@@ -117,10 +120,10 @@ scene("game", ({ level, score }) => {
         'x                                                   x',
         'x                                                   x',
         'x                          <                        x',
+        'x                                              12   x',
         'x                                                   x',
-        'x                                                   x',
-        'x                                                   x',
-        'x                                                   x',
+        'x                                           xx 34   x',
+        'x                                          xxx      x',
         'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
       ]  
     ]
@@ -147,10 +150,10 @@ scene("game", ({ level, score }) => {
     }
 
     const gamelevel = addLevel(maps[level], levelCfg)
-
+    
     const scoreLabel = add([
         text(score),
-        pos(30, 6),
+        pos(15, 6),
         layer('ui'),
         {
             value: score,
@@ -265,7 +268,7 @@ scene("game", ({ level, score }) => {
     player.collides('pipe', ()=> {
         keyPress('down', () => {
             go('game', {
-                level: (level + 1),
+                level: (level + 1) % maps.length,
                 score: scoreLabel.value
             })
         })
@@ -298,4 +301,4 @@ scene('lose', ({ score }) => {
     add([text(score, 32), origin ('center'), pos(width()/2, height()/ 2)])
 })
 
-start("game", { level: 0, score: 0 })
+start("game", { level: 0 , score: 0 },)
