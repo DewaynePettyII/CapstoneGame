@@ -4,7 +4,7 @@
   "description": "Mock-Up REST API for Mario: Mini Rush",
   "main": "mariojs.js",
   "scripts": {
-    "mmr_server": "mario_mini_rush --watch mmr.json"
+    "json:server": "json-server --watch mmr.json"
   },
   "repository": {
     "type": "git",
