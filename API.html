@@ -12,7 +12,7 @@
         document.getElementById("mariomini").addEventListener('click', getMario)
         function getMario(){
             // Grab after you run the database
-            fetch('', {
+            fetch('http://localhost:3000/Mario%20API', {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json'
