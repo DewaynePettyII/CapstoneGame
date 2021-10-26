@@ -140,7 +140,7 @@ scene("game", ({ level , score }) => {
         '-': [sprite('unboxed'), solid()],
         '*': [sprite('goomba'), solid(), 'dangerous', body()],
         '8': [sprite('goomba'), solid(), 'enemy', body()],
-        "<": [sprite('boss-goomba'), solid(), 'dangerous', body(), scale(2.5)],
+        "<": [sprite('boss-goomba'), solid(), 'dangerous', body()],
         '^': [sprite('coin'), 'coin'],
         '@': [sprite('mushroom'), solid(), 'mushroom', body()],
         '&': [sprite('surprise'), solid(), 'coin-surpise'],
