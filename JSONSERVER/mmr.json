@@ -3,30 +3,30 @@
 		{
 			"character": "Mario",
 			"image": "https://pngimg.com/uploads/mario/mario_PNG57.png",
-			"First Appearence": "Donkey Kong (1981)",
-			"Alignment": "Hero",
+			"first Appearence": "Donkey Kong (1981)",
+			"alignment": "Hero",
 			"background":"Depicted as a short, pudgy, Italian plumber who resides in the Mushroom Kingdom, his adventures generally center on rescuing Princess Peach from the Koopa villain Bowser. Mario has access to a variety of power-ups that give him different abilities."
 		},
 		{
 			"character": "Goomba",
 			"image": "https://static.wikia.nocookie.net/mario/images/9/9c/Goomba_-_MarioPartyStarRush.png/revision/latest?cb=20190423153742",
-			"First Appearence": "Super Mario Bros. (1985)",
-			"Alignment": "Neutral",
-			"Background":"Goombas resemble small, brown mushrooms and are a fungus-based species like Toads, Amanitas, Spooks, and Shroobs. Goombas are physically weak and are not much of a threat to Mario, since a single stomp usually defeats them."
+			"first Appearence": "Super Mario Bros. (1985)",
+			"alignment": "Neutral",
+			"background":"Goombas resemble small, brown mushrooms and are a fungus-based species like Toads, Amanitas, Spooks, and Shroobs. Goombas are physically weak and are not much of a threat to Mario, since a single stomp usually defeats them."
 		},
 		{
 			"character": "Luigi",
 			"image": "https://freepngimg.com/thumb/luigi/21919-6-luigi-photos.png",
-			"First Appearence": "Mario Bros. (1983)",
-			"Alignment": "Hero",
-			"Background":"Personality… timid, neurotic, and clever. Though more self-restrained than his impulsive older brother, Luigi is often overly hesitant and cautious. He's a little bit terrified of ghosts, but despite his fears, he can be very brave and heroic like Mario when it comes down to the wire."
+			"first Appearence": "Mario Bros. (1983)",
+			"alignment": "Hero",
+			"background":"Personality… timid, neurotic, and clever. Though more self-restrained than his impulsive older brother, Luigi is often overly hesitant and cautious. He's a little bit terrified of ghosts, but despite his fears, he can be very brave and heroic like Mario when it comes down to the wire."
 		},
 		{
 			"character": "Bowser / King Koopa",
 			"image": "https://static.wikia.nocookie.net/mario/images/7/7d/MSOGT_Bowser.png/revision/latest?cb=20210223143024",
-			"First Appearence": "Super Mario Bros. (1985)",
-			"Alignment": "Villain",
-			"Background":"Bowser's defining traits are his monstrous appearance with dragon-like elements, full-throated roar, fire-breathing abilities, cruel personality, bestial reptilian voice, never-ending conflict with Mario, and unrequited crush for Peach."
+			"first Appearence": "Super Mario Bros. (1985)",
+			"alignment": "Villain",
+			"background":"Bowser's defining traits are his monstrous appearance with dragon-like elements, full-throated roar, fire-breathing abilities, cruel personality, bestial reptilian voice, never-ending conflict with Mario, and unrequited crush for Peach."
 		}
 	]
 }

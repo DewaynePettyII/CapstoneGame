@@ -27,8 +27,20 @@
                 },
             })
             .then((res) => res.json())
-            .then((data) => document.getElementById('output').innerHTML = JSON.stringify (data[0].character));  
+            .then((data) => document.getElementById('output').innerHTML = JSON.stringify (data[0].background));  
         } 
+        // $(document).ready(function(){
+        //     document.getElementById("getType").addEventListener('click', getPichu)
+        //         function getPichu(){
+        //             $.get({
+        //                 type: 'GET',
+        //                 url: "https://pokeapi.co/api/v2/type/13/", 
+        //                 success: function(data, status){
+        //                     $("#output").append("status: " + status + ", data: " + JSON.stringify(data));
+        //                 }    
+        //         });
+        //     }
+        // });
     </script>
 </body>
 </html>
