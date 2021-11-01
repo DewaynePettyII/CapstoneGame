@@ -27,7 +27,13 @@
                 },
             })
             .then((res) => res.json())
-            .then((data) => document.getElementById('output').innerHTML = JSON.stringify (data[0].background));  
+            //.then((data) => document.getElementById('output').innerHTML = JSON.stringify (data[0].background));  
+            .then((data) => data.forEach(element => {
+                const { character, background, alignment } = element;
+                console.log('character', character)
+                console.log('background', background)
+                console.log('alignment', alignment)
+            }));
         } 
         // $(document).ready(function(){
         //     document.getElementById("getType").addEventListener('click', getPichu)
