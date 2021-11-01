@@ -11,7 +11,7 @@ Dewayne Petty II
 This is one of the descritptions for the characters featured in the API.
 
 These are the specific characteristics I chose to label for each character.
-
+```
 {
 	"Mario_API": [
 		{
@@ -27,7 +27,7 @@ These are the specific characteristics I chose to label for each character.
 This is the json file used to help run the project onve the server is active.
 
 This is a portion of it:
-
+```
 {
   "name": "capstonegame",
   "version": "1.0.0",
