@@ -21,6 +21,7 @@ These are the specific characteristics I chose to label for each character.
 			"background":"Depicted as a short, pudgy, Italian plumber who resides in the Mushroom Kingdom, his adventures generally center on rescuing Princess Peach from the Koopa villain Bowser. Mario has access to a variety of power-ups that give him different abilities."
 		},
 }
+```
 
 ## Package 
 
@@ -36,7 +37,7 @@ This is a portion of it:
   "scripts": {
     "json:server": "json-server --watch characters.json"
   },
-
+```
   ## Package-Lock
 
   The second portion of the Package.json file. Automatically generated once the package.json was made.
