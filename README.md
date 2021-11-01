@@ -1,5 +1,5 @@
-# Capstone Game
-# Final Capstone project for Front End Developer 2
+# Capstone Game (Front End Developer 2)
+## JSONSERVER
 All JSONSERVER related codes and functions
 
 ***Contributers***
