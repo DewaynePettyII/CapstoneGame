@@ -22,6 +22,20 @@ These are the specific characteristics I chose to label for each character.
 		},
 }
 ```
+## Opening A Server
+
+Open a new Terminal / Use GitHub
+
+Create a package.json file
+* npm init
+
+Write description
+* Hit enter until you are back at the main GitBash menu
+
+Enter: npm install --save json-server
+
+Start the server
+* In the script, run "test" by typing in: "json-server --watch (name of your json file).json
 
 ## Package 
 
