@@ -8,6 +8,7 @@
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"
     />
+    <link rel="stylesheet" href="dist/css/Sass.css">    
     <link href="http://localhost:3000/Mario_API" />
     <title>Document</title>
   </head>
@@ -18,7 +19,7 @@
         <button class="btn btn-danger" id="mariomini">Characters</button>
       </div>
       <hr />
-      <div id="output"></div>
+    <!-- <div id="output"></div> -->
     </div>
     <script>
       //$(document).ready(function(){
@@ -37,13 +38,41 @@
               console.log('character', character)
               console.log('background', background)
               console.log('alignment', alignment)
-              document.getElementById('character').innerHTML = character;
-              document.getElementById('background').innerHTML = background;
+              document.getElementById('mario').innerHTML = JSON.stringify (data[0].character)
+              document.getElementById('mario1').innerHTML = JSON.stringify (data[0].alignment)
+              document.getElementById('mario2').innerHTML = JSON.stringify (data[0].background)
+              document.getElementById('goomba').innerHTML = JSON.stringify (data[1].character)
+              document.getElementById('goomba1').innerHTML = JSON.stringify (data[1].alignment)
+              document.getElementById('goomba2').innerHTML = JSON.stringify (data[1].background)
+              document.getElementById('luigi').innerHTML = JSON.stringify (data[2].character)
+              document.getElementById('luigi1').innerHTML = JSON.stringify (data[2].alignment)
+              document.getElementById('luigi2').innerHTML = JSON.stringify (data[2].background)
+              document.getElementById('character').innerHTML = JSON.stringify (character);
+              document.getElementById('background').innerHTML = JSON.stringify (alignment);
+              document.getElementById('alignment').innerHTML = JSON.stringify (background);
+              ;
           }));
         }
      // });
     </script>
+    <p id="mario"></p>
+    <p id="mario1"></p>
+    <p id="mario2"></p>
+    <!-- <img src="mario_PNG57.png" title="Mario" alt="Mario" id= 'mario'> -->
+    <br>
+    <br>
+    <p id="goomba"></p>
+    <p id="goomba1"></p>
+    <p id="goomba2"></p>
+    <br>
+    <br>
+    <p id="luigi"></p>
+    <p id="luigi1"></p>
+    <p id="luigi2"></p>
+    <br>
+    <br>
     <P id="character"></P>
     <p id="background"></p>
+    <p id="alignment"></p>
   </body>
 </html>
