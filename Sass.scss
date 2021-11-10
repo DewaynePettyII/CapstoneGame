@@ -64,6 +64,10 @@ $fontCLR: rgb(0, 0, 0);
     }
     @include btn;
 }
+
+#apibdy {
+    background-color: $body;
+}
     
 .center {
     @include content;

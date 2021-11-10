@@ -8,71 +8,44 @@
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"
     />
-    <link rel="stylesheet" href="dist/css/Sass.css">    
+    <link rel="stylesheet" href="dist/css/Sass.css" />
     <link href="http://localhost:3000/Mario_API" />
     <title>Document</title>
   </head>
-  <body>
+  <body id="apibdy">
     <div class="container">
       <h1 class="text-center">Super Mario Bros</h1>
       <div class="d-flex justify-content-center">
         <button class="btn btn-danger" id="mariomini">Characters</button>
       </div>
       <hr />
-    <!-- <div id="output"></div> -->
+      <div id="output"></div>
     </div>
     <script>
       //$(document).ready(function(){
-      document.getElementById("mariomini").addEventListener('click', getMario)
-      function getMario(){
-          fetch('http://localhost:3000/Mario_API', {
-              method: 'GET',
-              headers: {
-                  'Content-Type': 'application/json'
-              },
-          })
+      let outPut = " ";
+      document.getElementById("mariomini").addEventListener("click", getMario);
+      function getMario() {
+        fetch("http://localhost:3000/Mario_API", {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        })
           .then((res) => res.json())
-          //.then((data) => document.getElementById('output').innerHTML = JSON.stringify (data[0].alignment));
-          .then((data) => data.forEach(element => {
+          .then((data) =>
+            data.forEach((element) => {
               const { character, background, alignment } = element;
-              console.log('character', character)
-              console.log('background', background)
-              console.log('alignment', alignment)
-              document.getElementById('mario').innerHTML = JSON.stringify (data[0].character)
-              document.getElementById('mario1').innerHTML = JSON.stringify (data[0].alignment)
-              document.getElementById('mario2').innerHTML = JSON.stringify (data[0].background)
-              document.getElementById('goomba').innerHTML = JSON.stringify (data[1].character)
-              document.getElementById('goomba1').innerHTML = JSON.stringify (data[1].alignment)
-              document.getElementById('goomba2').innerHTML = JSON.stringify (data[1].background)
-              document.getElementById('luigi').innerHTML = JSON.stringify (data[2].character)
-              document.getElementById('luigi1').innerHTML = JSON.stringify (data[2].alignment)
-              document.getElementById('luigi2').innerHTML = JSON.stringify (data[2].background)
-              document.getElementById('character').innerHTML = JSON.stringify (character);
-              document.getElementById('background').innerHTML = JSON.stringify (alignment);
-              document.getElementById('alignment').innerHTML = JSON.stringify (background);
-              ;
-          }));
-        }
-     // });
+              outPut += `<p>${character}</p>`;
+              outPut += `<p>${alignment}</p>`;
+              outPut += `<p>${background}</p>`;
+              document.getElementById("data").innerHTML = outPut;
+            }) 
+          ); 
+      }
     </script>
-    <p id="mario"></p>
-    <p id="mario1"></p>
-    <p id="mario2"></p>
-    <!-- <img src="mario_PNG57.png" title="Mario" alt="Mario" id= 'marioimg'> -->
-    <br>
-    <br>
-    <p id="goomba"></p>
-    <p id="goomba1"></p>
-    <p id="goomba2"></p>
-    <br>
-    <br>
-    <p id="luigi"></p>
-    <p id="luigi1"></p>
-    <p id="luigi2"></p>
-    <br>
-    <br>
-    <P id="character"></P>
-    <p id="background"></p>
-    <p id="alignment"></p>
+    <div class="container">
+    <p id="data"></p>
+    </div>
   </body>
 </html>
