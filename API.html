@@ -13,10 +13,10 @@
     <title>Document</title>
   </head>
   <body id="apibdy">
-    <div class="container">
-      <h1 class="text-center">Super Mario Bros</h1>
+    <div class="container text-white">
+      <h1 class="text-center font-family">Super Mario Bros</h1>
       <div class="d-flex justify-content-center">
-        <button class="btn btn-warning" id="mariomini">Characters</button>
+        <button class="btn btn-warning" id="mariomini">Click for Characters</button>
       </div>
       <hr />
       <div id="output"></div>
@@ -36,7 +36,7 @@
           .then((data) =>
             data.forEach((element) => {
               const { character, background, alignment } = element;
-              outPut += `<p>${character}</p>`;
+              outPut += `<p class="text-white">${character}</p>`;
               outPut += `<p>${alignment}</p>`;
               outPut += `<p>${background}</p>`;
               document.getElementById("data").innerHTML = outPut;
