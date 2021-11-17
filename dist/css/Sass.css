@@ -42,6 +42,7 @@
   display: block;
   margin-left: auto;
   margin-right: auto;
+  position: absolute;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   width: 20%;
 }
@@ -50,6 +51,7 @@
   display: block;
   margin-left: auto;
   margin-right: auto;
+  position: absolute;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -64,10 +66,7 @@
 }
 
 .title {
-  font-size: 250%;
-  font-weight: bold;
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   text-shadow: black;
-  color: white;
-  padding-left: 500px;
+  color: #fcffeb;
+  padding-left: 300px;
 }

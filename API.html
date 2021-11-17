@@ -11,10 +11,39 @@
     <link rel="stylesheet" href="dist/css/Sass.css" />
     <link href="http://localhost:3000/Mario_API" />
     <title>Document</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+ 	  <script src="jquery.fittext.js"></script>
+    <style type="text/css">
+      body {
+        color: rgb(212, 199, 8);
+        font: 16px/1.8 sans-serif;
+      }
+      .container {
+        width: 84%;
+        margin:0 auto;
+        max-width:1140px;
+      }
+      header {
+        width: 100%;
+        margin:0px auto;
+      }
+      h1 {
+        text-align: center;
+        color:#fff;
+        font: 95px/1 "Impact";
+        text-transform: uppercase;
+        display: block;
+        text-shadow:#dee90d -1px 1px 0,
+        #000000 -2px 2px 0,
+        #d45848 -3px 3px 0,
+        #d45848 -4px 4px 0;
+        margin: 5% auto 5%;
+      }
+    </style>
   </head>
   <body id="apibdy">
-    <div class="container text-white">
-      <h1 class="text-center font-family">Super Mario Bros</h1>
+    <div class="container">
+      <h1 class="text-center fittext1">Super Mario Bros.</h1>
       <div class="d-flex justify-content-center">
         <button class="btn btn-warning" id="mariomini">Click for Characters</button>
       </div>
@@ -22,7 +51,6 @@
       <div id="output"></div>
     </div>
     <script>
-      //$(document).ready(function(){
       let outPut = " ";
       document.getElementById("mariomini").addEventListener("click", getMario);
       function getMario() {
@@ -36,9 +64,9 @@
           .then((data) =>
             data.forEach((element) => {
               const { character, background, alignment } = element;
-              outPut += `<p class="text-white">${character}</p>`;
-              outPut += `<p>${alignment}</p>`;
-              outPut += `<p>${background}</p>`;
+              outPut += `<p class="text-white text-uppercase ">${character}</p>`;
+              outPut += `<p class= "text-dark col-md bg-warning">${alignment}</p>`;
+              outPut += `<p class= "text-dark col-md bg-warning">${background}</p>`;
               document.getElementById("data").innerHTML = outPut;
             }) 
           ); 
@@ -47,5 +75,8 @@
     <div class="container">
     <p id="data"></p>
     </div>
+    <script>
+      $("#fittext1").fitText();
+    </script>
   </body>
 </html>
