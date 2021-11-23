@@ -4,14 +4,14 @@ $body: #E52521;
 $fontCLR: rgb(0, 0, 0);
 
 @mixin page {
-    position: absolute;
+    // position: absolute;
 }
 
 @mixin content {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    position: absolute;
+    // position: absolute;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -27,7 +27,6 @@ $fontCLR: rgb(0, 0, 0);
 @mixin title {
     text-shadow: black;
     color: rgb(252, 255, 235);
-    padding-left: 300px;
 }
 @mixin btn($type: "default") {
     @if $type == 'round' {
@@ -82,10 +81,6 @@ $fontCLR: rgb(0, 0, 0);
     @include font;
     @include page;
 }
-.title {
-    @include title;
+#marioid {
+    text-align: center;
 }
-// #marioimg {
-//     width: 190px;
-//     height: 200px;
-// }

@@ -42,7 +42,6 @@
   display: block;
   margin-left: auto;
   margin-right: auto;
-  position: absolute;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   width: 20%;
 }
@@ -51,7 +50,6 @@
   display: block;
   margin-left: auto;
   margin-right: auto;
-  position: absolute;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -62,11 +60,8 @@
   padding-left: 10px;
   padding-right: 10px;
   color: white;
-  position: absolute;
 }
 
-.title {
-  text-shadow: black;
-  color: #fcffeb;
-  padding-left: 300px;
+#marioid {
+  text-align: center;
 }
