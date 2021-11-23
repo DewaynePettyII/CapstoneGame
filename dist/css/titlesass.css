@@ -1,20 +1,20 @@
-body {
+.fittext1 body {
   color: #d4c708;
   font: 16px/1.8 sans-serif;
 }
 
-.container {
+.fittext1 .container {
   width: 84%;
   margin: 0 auto;
   max-width: 1140px;
 }
 
-header {
+.fittext1 header {
   width: 100%;
   margin: 0px auto;
 }
 
-h1 {
+.fittext1 h1 {
   text-align: center;
   color: #fff;
   font: 95px/1 "Impact";
